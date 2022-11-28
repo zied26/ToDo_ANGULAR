@@ -1,11 +1,6 @@
 <ul>
+<app-task *ngFor="let task of tasks; trackBy:trackByFunction" [task]="task" (message)="ChangeCount($event)">
 
-<app-task [name]="name1" [complete]="complete1" (change)="ChangeCount($event)"></app-task>
-<app-task [name]="name2" [complete]="complete2" (change)="ChangeCount($event)"></app-task>
-<app-task [name]="name3" [complete]="complete3" (change)="ChangeCount($event)"></app-task>
-
+</app-task>
 </ul>
 <p>compteur {{count}}</p>
-
-
-

@@ -1,7 +1,6 @@
 
+<li [class]="getItemVariant()">
+  <input [(ngModel)]="task.title">{{task.title}} is here <span [class]="getBadgeVariant()">{{getComplete()}}</span> !!
 
-<li [class]="getItemVariant()"><input [(ngModel)]="name">{{name}} is here <span [class]="getBadgeVariant()">{{getComplete()}}</span> !!
-
-<button (click)="send()" mat-raised-button color="primary">{{getButtonText()}}</button>
+  <button (click)="send()" mat-raised-button color="primary">{{getButtonText()}}</button>
 </li>
-
