@@ -1,6 +1,14 @@
-<ul>
-<app-task *ngFor="let task of tasks; trackBy:trackByFunction" [task]="task" (message)="ChangeCount($event)">
+<ul *ngIf="count >0; else noTask">
+  <app-task *ngFor="let task of tasks; trackBy:trackByFunction" [task]="task" (message)="ChangeCount($event)">
 
-</app-task>
+  </app-task>
 </ul>
+<ng-template #noTask>Rien à Faire</ng-template>
+
 <p>compteur {{count}}</p>
+<div [ngSwitch]="true">
+  <p *ngSwitchCase=" completion === 0 " >Nombre de tache 0/3: {{completion}}% Vous n'avez rien fait!!</p>
+  <p *ngSwitchCase=" completion > 0 && completion <= 50 ">Nombre de tache 1/3: {{completion}}% Allez encore!!</p>
+  <p *ngSwitchCase=" completion > 50 && completion <= 99 ">Nombre de tache 2/3: {{completion}}% presque fini!</p>
+  <p *ngSwitchDefault>Nombre de tache 3/3: {{completion}}% good!!</p>
+</div>
