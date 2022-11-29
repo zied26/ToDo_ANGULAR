@@ -8,7 +8,7 @@
 <p>compteur {{count}}</p>
 <div [ngSwitch]="true">
   <p *ngSwitchCase=" completion === 0 " >Nombre de tache 0/3: {{completion}}% Vous n'avez rien fait!!</p>
-  <p *ngSwitchCase=" completion > 0 && completion <= 50 ">Nombre de tache 1/3: {{completion}}% Allez encore!!</p>
-  <p *ngSwitchCase=" completion > 50 && completion <= 99 ">Nombre de tache 2/3: {{completion}}% presque fini!</p>
+  <p *ngSwitchCase=" completion > 0 && completion <= 50 ">Nombre de tache 1/3: {{completion |  number:'2.1-2'}}% Allez encore!!</p>
+  <p *ngSwitchCase=" completion > 50 && completion <= 99 ">Nombre de tache 2/3: {{completion |  number:'2.1-2'}}% presque fini!</p>
   <p *ngSwitchDefault>Nombre de tache 3/3: {{completion}}% good!!</p>
 </div>
