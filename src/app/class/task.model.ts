@@ -4,7 +4,8 @@ export class Task {
     public title : string,
     public completed : boolean,
     public description : string,
-    public date : string
+    public date : string,
+    
   )
   {
     this.id = id;
@@ -12,5 +13,6 @@ export class Task {
     this.completed = completed;
     this.description = description;
     this.date = date;
+
   }
 }

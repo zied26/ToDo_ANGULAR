@@ -7,20 +7,22 @@ import { Task } from './class/task.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public  count : number;
-  public  tasks : Task[];
-  public  completion : number;
+  public  count! : number;
+  public  tasks! : Task[];
+  public  completion! : number;
   constructor() {
-    this.tasks = [
-      new Task(0, "a", false, "e",Date()),
-      new Task(1, "b", true, "f",""),
-      new Task(2, "c", true, "g","")
-    ];
-
-    this.count = this.tasks.filter(task => task.completed).length;
-    this.completion = (this.count / this.tasks.length)*100;
-    console.log(this.completion);
-  }
+    new Promise(() =>
+      setTimeout(() => {
+        this.tasks = [
+          new Task(0, "a", false, "e", Date()),
+          new Task(1, "b", true, "f", Date()),
+          new Task(2, "c", true, "g", Date())
+        ];
+        this.count = this.tasks.filter(task => task.completed).length;
+        this.completion = (this.count / this.tasks.length) * 100;
+      }, 300)
+    )
+  };
 
 
   ChangeCount(status : boolean): void {
