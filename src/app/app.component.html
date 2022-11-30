@@ -1,5 +1,5 @@
 <ul *ngIf="count >0; else noTask">
-  <app-task *ngFor="let task of todo.ntasks; trackBy:trackByFunction" [task]="task" (message)="ChangeCount($event)">
+  <app-task *ngFor="let task of todo.tasks; trackBy:trackByFunction" [task]="task" (message)="ChangeCount($event)">
 
   </app-task>
 </ul>

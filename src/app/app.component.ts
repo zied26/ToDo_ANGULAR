@@ -14,7 +14,7 @@ export class AppComponent {
   constructor(public todo: TodoService) {
     //new Promise(() =>
      // setTimeout(() => {
-
+     
 
         this.count = this.todo.tasks.filter(task => task.completed).length;
         this.completion = (this.count / this.todo.tasks.length) * 100;
@@ -31,4 +31,5 @@ export class AppComponent {
   trackByFunction(index: number, item: any): string {
     return item.id;
   }
+
 }
