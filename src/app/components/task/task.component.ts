@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from 'src/app/class/task.model';
-import { TodoService } from './service/todo.service';
+import { TodoService } from 'src/app/service/todo.service';
+
 
 @Component({
   selector: 'app-task',
@@ -29,7 +30,7 @@ export class TaskComponent {
   }
 
   toggleComplete(): void {
-    this.todo.toggleComplete;
+    this.todo.toggleComplete(this.task.id);
   }
 
   send(): void {
