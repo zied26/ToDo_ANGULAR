@@ -8,7 +8,6 @@ import { Task } from 'src/app/class/task.model';
 })
 export class TaskComponent {
   @Input() public task!: Task;
-  @Output() public message: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() {}
 
@@ -34,7 +33,6 @@ export class TaskComponent {
 
   send(): void {
     this.toggleComplete();
-    this.message.emit(this.task.completed);
   }
 
 }

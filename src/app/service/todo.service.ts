@@ -24,4 +24,7 @@ export class TodoService {
         }, 1000);
   }
 )}
+  toggleComplete(index: list): any{
+    
+  }
 }
