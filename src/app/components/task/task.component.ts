@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from 'src/app/class/task.model';
+import { TodoService } from './service/todo.service';
 
 @Component({
   selector: 'app-task',
@@ -9,7 +10,7 @@ import { Task } from 'src/app/class/task.model';
 export class TaskComponent {
   @Input() public task!: Task;
 
-  constructor() {}
+  constructor(public todo: TodoService) {}
 
   getComplete(): string {
     return this.task.completed ? "terminé" : "en cours";
@@ -28,7 +29,7 @@ export class TaskComponent {
   }
 
   toggleComplete(): void {
-    this.task.completed = !this.task.completed;
+    this.todo.toggleComplete;
   }
 
   send(): void {

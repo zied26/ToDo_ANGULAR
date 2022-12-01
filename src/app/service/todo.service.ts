@@ -3,9 +3,9 @@ import { Task } from '../class/task.model';
 
 
 const initalList : Task[] = [
-  new Task(0, "a", false, "e", Date()),
-  new Task(1, "b", true, "f", Date()),
-  new Task(2, "c", true, "g", Date())
+  new Task( "a", false, "e", Date()),
+  new Task( "b", true, "f", Date()),
+  new Task( "c", true, "g", Date())
 ];
 
 @Injectable({
@@ -24,7 +24,7 @@ export class TodoService {
         }, 1000);
   }
 )}
-  toggleComplete(index: list): any{
-    
+  toggleComplete(index: number): void{
+      this.tasks[index].completed = !this.tasks[index].completed;
   }
 }
