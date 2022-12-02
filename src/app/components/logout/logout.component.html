@@ -1,2 +1,2 @@
-<button *ngIf="auth.isAuth; else elseBlock" color="primary" (click)="auth.logout()">Logout</button>
+<button *ngIf="auth.isAuth; else elseBlock" color="warn" (click)="auth.logout()">Logout</button>
 <ng-template #elseBlock><p>connectez-vous</p></ng-template>

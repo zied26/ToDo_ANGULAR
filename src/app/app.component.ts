@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TodoService } from './service/todo.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,8 +7,9 @@ import { TodoService } from './service/todo.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  public title : string = 'todo';
 
- 
+
 
 
 
