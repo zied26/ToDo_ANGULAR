@@ -27,4 +27,12 @@ export class TodoService {
   toggleComplete(index: number): void{
       this.tasks[index].completed = !this.tasks[index].completed;
   }
+  public getTaskById(id: number): Task | null {
+    // for (const task of this.tasks) {
+    //   if (task.id == id)
+    //     return task;
+    // }
+    // return null;
+    return this.tasks.filter(task => task.id == id)[0];
+  }
 }

@@ -1,7 +1,16 @@
 
 <li [class]="getItemVariant()">
-  {{task.date | date:'short'}}<input [(ngModel)]="task.title">{{task.title}} is here <span [class]="getBadgeVariant()" >{{getComplete()}}</span> !!
-
-  <button (click)="send()" mat-raised-button color="info">{{getButtonText()}}</button>
-  <p></p>
+  <input matInput placeholder="course" [(ngModel)]="task.title">
+  <a [routerLink]="['/todolist', task.id]" routerLinkActive="active"
+  [routerLinkActiveOptions]="{exact: true}">
+    <div>
+      <p>
+        {{ task.id }} : {{ task.title }} :
+        <span [class]="getBadgeVariant()">{{ getComplete() }}</span>
+      </p>
+      <p>{{task.description}}</p>
+      <p>{{ task.date | date:'dd/MM/y hh:mm' }}</p>
+    </div>
+    <button mat-raised-button color="basic" (click)="toggleComplete()">{{ getButtonText() }}</button>
+  </a>
 </li>

@@ -11,6 +11,8 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { TaskDetailsComponent } from './components/taskdetails/taskdetails.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { LogoutComponent } from './components/logout/logout.component';
     TodoListComponent,
     NavComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    TaskDetailsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
