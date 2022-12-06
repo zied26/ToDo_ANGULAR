@@ -17,7 +17,7 @@ export class AuthService {
   public login(): void{
     setTimeout(() => {
 
-   this.isAuth = true;   this.router.navigate(['todo-list'])}, 2000);
+   this.isAuth = true;   this.router.navigate(['todolist'])}, 2000);
   }
   public logout(): void{
     setTimeout(() => {
