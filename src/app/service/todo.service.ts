@@ -29,6 +29,7 @@ export class TodoService {
     new Promise<Task[]>(() => {
          setTimeout(() => {
           this.tasks = list;
+          this.emit(this.tasks)
         }, 1000);
   }
 )}
@@ -44,6 +45,11 @@ export class TodoService {
     return this.tasks.filter(task => task.id == id)[0];
   }
   public emit(tasks : Task[]) : void {
-    this._tasks.next(Object.assign([],this.tasks));
+    this._tasks.next(Object.assign([],tasks));
+  }
+  public addTask(task: Task) : void{
+    this.tasks.push(task);
+    this.emit(this.tasks);
+
   }
 }
