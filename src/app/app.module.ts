@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TaskComponent } from './components/task/task.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
@@ -14,6 +14,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { TaskDetailsComponent } from './components/taskdetails/taskdetails.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { TaskFormComponent } from './components/task-form/task-form.component';
+import { UserListComponent } from './components/user-list/user-list.component';
 
 
 @NgModule({
@@ -26,14 +27,16 @@ import { TaskFormComponent } from './components/task-form/task-form.component';
     LogoutComponent,
     TaskDetailsComponent,
     NotFoundComponent,
-    TaskFormComponent
+    TaskFormComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,9 +5,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 
 const initalList : Task[] = [
-  new Task( "a", false, "e", Date()),
-  new Task( "b", true, "f", Date()),
-  new Task( "c", true, "g", Date())
+  new Task( "a", false, "e", new Date()),
+  new Task( "b", true, "f", new Date()),
+  new Task( "c", true, "g", new Date())
 ];
 
 @Injectable({
