@@ -40,8 +40,8 @@ export class UserService {
   public emitUsers(users : User[]) : void {
     this._users.next(Object.assign([],users));
   }
-  public addUser(task: User) : void{
-    this.users.push(task);
+  public addUser(user: User) : void{
+    this.users.push(user);
     this.emitUsers(this.users);
 
   }

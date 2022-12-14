@@ -15,6 +15,7 @@ import { TaskDetailsComponent } from './components/taskdetails/taskdetails.compo
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { TaskFormComponent } from './components/task-form/task-form.component';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { UserFormComponent } from './components/user-form/user-form.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { UserListComponent } from './components/user-list/user-list.component';
     TaskDetailsComponent,
     NotFoundComponent,
     TaskFormComponent,
-    UserListComponent
+    UserListComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,

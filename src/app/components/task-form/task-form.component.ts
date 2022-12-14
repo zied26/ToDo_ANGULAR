@@ -10,7 +10,7 @@ import { TodoService } from 'src/app/service/todo.service';
   templateUrl: './task-form.component.html',
   styleUrls: ['./task-form.component.scss']
 })
-export class TaskFormComponent {
+export class TaskFormComponent  implements OnInit {
   public task: Task | null;
   constructor(private todo: TodoService,private route:ActivatedRoute, private router: Router){
 

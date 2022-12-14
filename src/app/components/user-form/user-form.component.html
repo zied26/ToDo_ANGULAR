@@ -1,0 +1,19 @@
+
+
+
+
+
+
+<form [formGroup]="userForm" >
+    <input type="text" name="firstName" placeholder="Nom" formControlName="firstName">
+    <input type="text" name="lastName" placeholder="Prénom" formControlName="lastName" >
+    <input type="text" name="email" placeholder="email" formControlName="email">
+        <select name="team" id="team" >
+            <option value="">--Please choose an option--</option>
+            <option value="jean">en cours</option>
+            <option value="jeanne">terminé</option>
+
+        </select>
+
+        <button (click)="onSubmit(userForm)"> valider</button>
+</form>

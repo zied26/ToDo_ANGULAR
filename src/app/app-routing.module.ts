@@ -6,6 +6,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { TaskFormComponent } from './components/task-form/task-form.component';
 import { TaskDetailsComponent } from './components/taskdetails/taskdetails.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { UserFormComponent } from './components/user-form/user-form.component';
 
 const routes: Routes = [  {
   path: '',
@@ -15,7 +17,8 @@ const routes: Routes = [  {
     {path: 'taskForm' , component: TaskFormComponent },
     {path: 'todolist', component: TodoListComponent, pathMatch: 'full'},
     {path: 'todolist/:id', component: TaskDetailsComponent},
-
+    {path: 'userList', component: UserListComponent},
+    {path: 'userForm', component: UserFormComponent},
   ]
 },
 
