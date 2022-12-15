@@ -39,9 +39,11 @@ export class TodoListComponent
   trackByFunction(index: number, item: any): string {
     return item.id;
   }
+
  getTask() : void {
   this.subscribe = this.tasks$.subscribe(tasks =>{this.tasks = tasks})
  }
+
  ngOnDestroy() : void {
   this.subscribe.unsubscribe();
  }

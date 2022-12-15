@@ -5,9 +5,19 @@
 
     <select name="team" id="team" formControlName="team" required>
         <option value="">--Please choose an option--</option>
-        <option value="equipe1">en cours</option>
-        <option value="equipe2">terminé</option>
+        <option value="equipe1">equipe1</option>
+        <option value="equipe2">equipe2</option>
     </select>
-
-    <button type="submit" [disabled]="userForm.invalid"> valider</button>
+    <ul>
+        <div formArrayName="skills" *ngFor="let skill of getSkills().controls; let i = index; trackBy: trackByFunction">
+            <li>
+                <label>{{ i }}</label>
+                <input type="text" placeholder="Nouveau skill" [formControlName]="i" [value]="skill.value">
+                <button mat-raised-button type="button" (click)="removeSkill(i)">remove Skill</button>
+            </li>
+        </div>
+    </ul>
+    <button mat-raised-button color="secondary" type="button" (click)="addSkill()">Ajouter un skill</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid"> valider</button>
 </form>
+
