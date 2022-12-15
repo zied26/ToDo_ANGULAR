@@ -22,6 +22,9 @@ ngOnInit(): void {
   this.users$ = this.userList.getUsers();
   this.getUser();
   }
+  trackByFunction(index: number, item: any): string {
+    return item.id;
+  }
   getUser() : void {
     this.subscribe = this.users$.subscribe(users =>{this.users = users})
    }

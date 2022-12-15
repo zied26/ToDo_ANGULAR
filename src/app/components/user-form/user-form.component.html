@@ -1,19 +1,13 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm)">
+    <input type="text" name="firstName" placeholder="Nom" formControlName="firstName" required>
+    <input type="text" name="lastName" placeholder="Prénom" formControlName="lastName" required>
+    <input type="text" name="email" placeholder="email" formControlName="email" required>
 
+    <select name="team" id="team" formControlName="team" required>
+        <option value="">--Please choose an option--</option>
+        <option value="equipe1">en cours</option>
+        <option value="equipe2">terminé</option>
+    </select>
 
-
-
-
-
-<form [formGroup]="userForm" >
-    <input type="text" name="firstName" placeholder="Nom" formControlName="firstName">
-    <input type="text" name="lastName" placeholder="Prénom" formControlName="lastName" >
-    <input type="text" name="email" placeholder="email" formControlName="email">
-        <select name="team" id="team" >
-            <option value="">--Please choose an option--</option>
-            <option value="jean">en cours</option>
-            <option value="jeanne">terminé</option>
-
-        </select>
-
-        <button (click)="onSubmit(userForm)"> valider</button>
+    <button type="submit" [disabled]="userForm.invalid"> valider</button>
 </form>

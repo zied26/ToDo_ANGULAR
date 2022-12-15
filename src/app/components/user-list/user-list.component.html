@@ -1,7 +1,7 @@
 <div>
-    <ul>
+    <ul *ngFor="let user of users; trackBy: trackByFunction">
         <li>
-        {{users[0].firstName}}  {{users[0].lastName}}  {{users[0].email}}  {{users[0].team }}  {{users[0].skills}}
+        {{user.firstName}}  {{user.lastName}}  {{user.email}}  {{user.team }}  {{user.skills}}
         </li>
     </ul>
 </div>
