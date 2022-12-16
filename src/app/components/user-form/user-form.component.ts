@@ -12,6 +12,9 @@ import { UserService } from 'src/app/service/user.service';
 export class UserFormComponent implements OnInit {
 
   userForm : FormGroup;
+  userName: FormControl;
+  password: FormControl;
+  age: FormControl;
   firstName: FormControl;
   lastName: FormControl;
   email: FormControl;
@@ -20,6 +23,9 @@ export class UserFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private router: Router, private user: UserService){
 
+    this.userName = this.fb.control('',[Validators.required, Validators.minLength(4), Validators.maxLength(20)]);
+    this.password = this.fb.control('',[Validators.required, Validators.minLength(4), Validators.minLength(20)]);
+    this.age = this.fb.control('',[Validators.required,Validators.min(8), Validators.max(110)]);
     this.firstName = this.fb.control('',[Validators.required, Validators.minLength(4)]);
     this.lastName = this.fb.control('',[Validators.required, Validators.minLength(4)]);
     this.email = this.fb.control('',[Validators.required, Validators.email]);
@@ -27,6 +33,9 @@ export class UserFormComponent implements OnInit {
     this.skills = this.fb.array([this.fb.control('',[Validators.required])]);
 
     this.userForm = this.fb.group({
+      userName: this.userName,
+      password: this.password,
+      age: this.age,
       firstName: this.firstName,
       lastName: this.lastName,
       email: this.email,
@@ -58,6 +67,9 @@ export class UserFormComponent implements OnInit {
   onSubmit(userForm : FormGroup){
     this.user.addUser(
       new User(
+        this.userName?.value,
+        this.password?.value,
+        this.age?.value,
         this.firstName.value,
         this.lastName.value,
         this.email.value,
@@ -67,6 +79,10 @@ export class UserFormComponent implements OnInit {
     console.log(userForm.value);
     this.router.navigate(['userList']);
   }
+
+  /*public get userName(): AbstractControl | null {
+    return this.userForm?.get('userName');
+  }*/
 
   trackByFunction(
      item: any): string {

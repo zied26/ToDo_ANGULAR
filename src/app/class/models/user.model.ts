@@ -2,6 +2,9 @@ export class User {
 
     constructor(
 
+        public userName : string,
+        public password : string,
+        public age : number,
         public firstName : string,
         public lastName : string,
         public email : string,
@@ -10,6 +13,9 @@ export class User {
 
         ){
 
+         this.userName = userName;
+         this.password = password;
+         this.age = age;
          this.firstName = firstName;
          this.lastName = lastName;
          this.email = email;

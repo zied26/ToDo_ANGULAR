@@ -1,5 +1,38 @@
 <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm)">
-    <input type="text" name="firstName" placeholder="Nom" formControlName="firstName" required>
+
+
+  <label for="userName">userName: </label >
+    <input type="text" name="userName" placeholder="userName" formControlName="userName">
+    <p *ngIf="userName?.dirty && userName?.hasError('required')">
+      identifiant obligatoire
+    </p>
+    <p *ngIf="userName?.dirty && (userName?. hasError('minlength') || userName?. hasError('maxlength'))">
+       identifiant doit comporter entre 4 et 20 caractères.
+    </p><hr/>
+
+    <label for="password">Mot de passe: </label >
+      <input type="text" name="password" placeholder="password" formControlName="password">
+      <p *ngIf="password?.dirty && password?.hasError('required')">
+        Mot de passe obligatoire
+      </p>
+      <p *ngIf="password?.dirty && (password?. hasError('minlength') || password?. hasError('maxlength'))">
+         identifiant doit comporter entre 4 et 20 caractères.
+      </p><hr/>
+
+      <label for="age">age: </label >
+        <input type="number" name="age" placeholder="age" formControlName="age">
+        <p *ngIf="age?.dirty && age?.hasError('required')">
+          Age obligatoire
+        </p>
+        <p *ngIf="age?.dirty && (age?. hasError('min') || age?. hasError('max'))">
+           Age doit être compris entre 8 et 110 .
+        </p><hr/>
+
+
+
+  <label for="firstName">Prénom : </label >
+  <input type="text" name="firstName" placeholder="Nom" formControlName="firstName" required>
+
     <input type="text" name="lastName" placeholder="Prénom" formControlName="lastName" required>
     <input type="text" name="email" placeholder="email" formControlName="email" required>
 

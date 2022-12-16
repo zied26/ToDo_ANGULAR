@@ -3,7 +3,7 @@ import { User } from '../class/models/user.model';
 import { BehaviorSubject , Observable } from 'rxjs';
 
 const initalUser : User[] = [
-  new User( "claude", "JEAN", "email@gmail.com", "lapin" , ["rapide"])
+  new User("jeanjean","12345a",25, "claude", "JEAN", "email@gmail.com", "lapin" , ["rapide"])
 ];
 
 @Injectable({
