@@ -11,6 +11,7 @@ export class User {
         public team : string,
         public skills : string[],
 
+
         ){
 
          this.userName = userName;
@@ -21,5 +22,6 @@ export class User {
          this.email = email;
          this.team = team;
          this.skills = skills;
+
     }
 }
