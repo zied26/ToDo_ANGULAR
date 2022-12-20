@@ -28,11 +28,20 @@ export class UserFormComponent implements OnInit {
   confirmCtrl: FormControl;
   passwordStrength = 0;
 
-
   static passwordMatch(group : FormGroup){
     const password = group.get('passwordCtrl')?.value;
     const confirm = group.get('confirmCtrl')?.value;
     return password === confirm ? null : { matchingError : true};
+
+  }
+
+  birthdateCtrl : FormControl;
+
+  static isOldEnough(control: FormControl){
+    const birthDatePLus18 = new Date(control.value);
+    birthDatePLus18.setFullYear(birthDatePLus18.getFullYear()+ 18);
+    return birthDatePLus18 < new Date() ? null : {tooYoung : true};
+
   }
 
   constructor(private fb: FormBuilder, private router: Router, public user: UserService){
@@ -47,6 +56,8 @@ export class UserFormComponent implements OnInit {
 
     this.passwordCtrl = fb.control('',[Validators.required, Validators.minLength(4), Validators.maxLength(13)] );
     this.confirmCtrl = fb.control('',[Validators.required, Validators.minLength(4), Validators.maxLength(20)] );
+
+    this.birthdateCtrl = fb.control('',[Validators.required,Validators.min(65), Validators.max(99) ,UserFormComponent.isOldEnough]);
 
     this.passwordGroup = fb.group({
       passwordCtrl: this.passwordCtrl,
@@ -72,7 +83,8 @@ export class UserFormComponent implements OnInit {
       email: this.email,
       team: this.team,
       skills: this.skills,
-      passwordGroup: this.passwordGroup
+      passwordGroup: this.passwordGroup,
+      birthdate: this.birthdateCtrl
     })
   }
 

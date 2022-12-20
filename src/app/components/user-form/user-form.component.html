@@ -12,6 +12,7 @@
     <span *ngIf="userNameCtrl.hasError('alreadyUsed') && userNameCtrl.touched">Please input valid name</span>
   <hr />
 
+
   <div [formGroup]="passwordGroup">
     <div>
       <label for="passwordCtrl"> Mot de passe: </label>
@@ -48,6 +49,14 @@
     Age doit être compris entre 8 et 110 .
   </p>
   <hr />
+  <div>
+      <label>Date de naissance</label>
+      <input type="date" formControlName="birthdate">
+      <div *ngIf=" birthdateCtrl.dirty">
+          <p *ngIf="birthdateCtrl.hasError('required')">SVP date de naissance requise</p>
+          <p *ngIf="birthdateCtrl.hasError('tooYoung')">age compris entre 65 et 99 ans</p>
+      </div>
+  </div><hr />
 
 
 
