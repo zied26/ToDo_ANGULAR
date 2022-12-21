@@ -32,7 +32,7 @@ export class TaskFormComponent  implements OnInit {
 
      // appelle la methode addTask de notre service todolist, en lui fournissant une nouvelle tache construite à partir des inputs de notre formulaire, puis nous redirige vers le composant todolist.
 
-    this.todo.addTask(new Task(taskForm.value.name, (taskForm.value.completed == 0) ? false : true,taskForm.value.description , new Date()));
+    this.todo.addTask(new Task(taskForm.value.name, (taskForm.value.completed == 0) ? false : true,taskForm.value.description , new Date(), this.todo.tasks.length));
     this.router.navigate(['todolist']);
 
 
