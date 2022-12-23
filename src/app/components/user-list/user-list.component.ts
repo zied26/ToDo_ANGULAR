@@ -19,8 +19,10 @@ constructor(public userList: UserService){
 };
 
 ngOnInit(): void {
+  this.userList.load();
   this.users$ = this.userList.getUsers();
   this.getUser();
+
   }
   trackByFunction(index: number, item: any): string {
     return item.id;
