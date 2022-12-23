@@ -19,7 +19,7 @@ export class TodoService {
   private _tasks = new BehaviorSubject<Task[]>([]);
   readonly tasks$ = this._tasks.asObservable();
 
-  constructor(private http: HttpClient ) {
+  constructor(private http: HttpClient) {
     // this.updateList(initalList);
   }
 
@@ -67,15 +67,12 @@ export class TodoService {
 
   public load(): any {
     const url = "https://todo-list-bb97c-default-rtdb.europe-west1.firebasedatabase.app/";
-    this.http.get( url + "/tasks.json")
-  // .pipe(map((next : any) =>{
-  //   return next;
-  // }))
-  .subscribe(
-    response => {
-      //console.log(response);
-      this._tasks.next(Object.assign(this.tasks, response));
-    }
-  )
- }
+    this.http.get(url + "/tasks.json")
+      .subscribe(
+        response => {
+          //console.log(response);
+          this._tasks.next(Object.assign(this.tasks, response));
+        }
+      )
+  }
 }
